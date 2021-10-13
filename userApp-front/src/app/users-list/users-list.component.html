@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col">
+      <table class="table table-striped table-hover">
+        <tbody>
+          <tr *ngFor="let user of users" (click)="getUser(user.id)">
+            <th scope="row" ></th>
+            <td>{{ user.nom }}</td>
+            <td>{{ user.prenom }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col">
+      <div class="card cursor-pointer mb-2" *ngIf="showDetails">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ currentUser.prenom }} {{ currentUser.nom }}</h5>
+          <div class="ms-5">
+            <p> {{ currentUser.pays }} </p>
+            <p> {{ currentUser.ville }} </p>
+            <p> {{ currentUser.codePostal }} </p>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm ms-5" routerLink="/users/{{ currentUser.id }}">Update</button>
+          <button type="button" class="btn btn-danger btn-sm float-end me-5" (click)="deleteUser(currentUser.id)">Delete</button>
+        </div>
+      </div>
+
+      <div *ngIf="!showDetails">
+        <p>Click on a user to see details.</p>
+      </div>
+
+    </div>
+</div>

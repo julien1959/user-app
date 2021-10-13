@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="container mt-10 ms-auto">
+    <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+      <legend class="text-center mt-5 mb-5">Update User</legend>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label" for="nom">Name:</label>
+        <div class="col-sm-10">
+          <input id="nom" type="text" class="form-control" formControlName="nom">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label" for="prenom">First name:</label>
+        <div class="col-sm-10">
+          <input id="prenom" type="text" class="form-control" formControlName="prenom">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label" for="pays">Country:</label>
+        <div class="col-sm-10">
+          <input id="pays" type="text" class="form-control" formControlName="pays">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label" for="ville">City:</label>
+        <div class="col-sm-10">
+          <input id="ville" type="text" class="form-control" formControlName="ville">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label" for="codePostal">Postal code:</label>
+        <div class="col-sm-10">
+          <input id="codePostal" type="text" class="form-control" formControlName="codePostal">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+</div>
+
